@@ -1,0 +1,23 @@
+TemperatureSensor DEFINITIONS IMPLICIT TAGS ::= BEGIN
+
+  UuidString36 ::= IA5String (SIZE (36))
+
+  Unixtime ::= INTEGER
+
+  LocalId ::= INTEGER
+
+  TemperatureUnit ::= ENUMERATED {
+    celsius(0),
+    fahrenheit(1),
+    kelvin(2)
+  }
+
+  TemperatureReading ::= SEQUENCE {
+    sensorId      [0] UuidString36 OPTIONAL,
+    localId       [1] LocalId OPTIONAL,
+    timestamp     [2] Unixtime,
+    temperature   [3] INTEGER,
+    unit          [4] TemperatureUnit
+  }
+
+END
