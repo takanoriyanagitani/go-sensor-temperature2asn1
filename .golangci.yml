@@ -1,0 +1,17 @@
+version: "2"
+
+linters:
+  default: all
+  disable:
+    - wsl
+    - revive
+    - depguard
+    - exhaustruct
+    - gochecknoglobals
+    - mnd
+    - varnamelen
+    - wrapcheck
+    - wsl_v5
+  exclusions:
+    paths:
+    - (.+)_test\.go
